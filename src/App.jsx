@@ -89,8 +89,7 @@ const StyledIcon = styled.img`
 height: 30%;
 `;
 
-
-
+//APP
 
 function App() {
 
