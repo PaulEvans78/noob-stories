@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+// import React, { useState } from "react";
 
 import {
     Link
@@ -16,13 +17,37 @@ const StyledNav = styled.nav`
     font-family: 'Roboto', sans-serif;
     color: whitesmoke;
     font-size: 1.25rem;
+
+    @media screen and (max-width: 767px) {
+    flex-direction: row-reverse;
+    }
 `;
 
 const StyledLink = styled(Link)`
     color: white;
     /* background-color: turquoise; */
     border-radius: 8px;
+
+    @media screen and (max-width: 767px) {
+    display: none;
+    }
 `;
+
+
+const StyledHamburger = styled.div`
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 10;
+
+    @media screen and (max-width: 767px) {
+    display: flex;
+    }
+`;
+
+
 const Navbar = () => {
     return (
         <StyledNav>
@@ -30,8 +55,24 @@ const Navbar = () => {
             <StyledLink to="/cv">CV</StyledLink>
             <StyledLink to="/portfolio">Portfolio</StyledLink>
             <StyledLink to="/contact">Contact</StyledLink>
+            <Hamburger />
         </StyledNav>
+        
     );
 }
+
+//HAMBURGER MENU
+
+function Hamburger() {
+    return (  
+      <StyledHamburger>
+           <div className="hamburgerMenu">
+           <div className="burger burger1"></div>
+           <div className="burger burger2"></div>
+           <div className="burger burger3"></div>
+          </div>
+      </StyledHamburger>
+    );
+  }
 
 export default Navbar;
