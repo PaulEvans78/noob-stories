@@ -2,9 +2,6 @@
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import linkedIcon from './assets/linkedIn_icon_white.png';
-import instaIcon from './assets/instagram_icon_white.png';
-import githubIcon from './assets/github_white.png';
 // import Main from "./main";
 
 
@@ -59,7 +56,7 @@ grid-template-areas:
 "main main main main main"
 "main main main main main"
 "main main main main main"
-"footer footer footer icon icon";
+"footer footer footer footer footer";
 
 @media screen and (max-width: 767px) {
 grid-template-rows: 7rem repeat(2, 1fr) 7rem;
@@ -69,48 +66,10 @@ grid-template-areas:
 "main main "
 "main main "
 "main main "
-"footer footer"
-"icon icon";
+"footer footer";
   }
 `;
 
-
-
-
-// ICONS
-
-// import {
-//   linkedIn_icon_white.png,
-//   instagram_icon_white.png
-// } from './assets';
-
-
-
-
-const IconContainer = styled.div`
-background-image: linear-gradient(#242424, #27dff7);
-grid-area: icon;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-
-@media screen and (max-width: 767px) {
-  flex-direction: column;
-  background-image: none;
-  background-color: #27dff7;
-}
-`;
-
-
-const StyledIcon = styled.img`
-height: 2em;
-
-@media screen and (max-width: 767px) {
-height: 3em;
-margin: 0.5em;
-}
-`;
 
 //APP
 
@@ -136,12 +95,6 @@ function App() {
         {/* <Main /> */}
         </MainContainer>
           <Footer />
-          <IconContainer />
-            <IconContainer> 
-              <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={linkedIcon} alt="LinkedIn"/> </a>
-              <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={instaIcon} alt="Instagram"/> </a>
-              <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={githubIcon} alt="GitHub"/> </a>
-            </IconContainer>
       </GridContainer>
     </Router>
   );

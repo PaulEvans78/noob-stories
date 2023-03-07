@@ -5,8 +5,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);*/
   background-color: #242424; 
 
   font-synthesis: none;
@@ -15,13 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  width: 100vw;
-  min-height: 100vh;
-  background-color: #242424; */
 }
 
 body {
@@ -120,6 +111,10 @@ button:focus-visible {
   z-index: 10;
 }  */
 
+
+
+
+/* BURGER ICON BARS  */
 .burger {
   width: 2rem;
   height: 0.25rem;
@@ -129,7 +124,6 @@ button:focus-visible {
   transform-origin: 1px;
   transition: all 0.3s linear;
 }
-
 
 
 

@@ -29,13 +29,11 @@ const StyledFooter = styled.footer`
 
 const StyledFooterLink = styled(Link)`
     color: white;
-    /* background-color: turquoise; */
     border-radius: 8px;
 `;
 
 const IconContainer = styled.div`
-background-image: linear-gradient(#242424, #27dff7);
-grid-area: icon;
+grid-area: footer;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
@@ -44,19 +42,18 @@ align-items: center;
 @media screen and (max-width: 767px) {
   flex-direction: column;
   background-image: none;
-  background-color: #27dff7;
 }
 `;
 
 
-// const StyledIcon = styled.img`
-// height: 2em;
+const StyledIcon = styled.img`
+height: 2em;
+margin: 0.5em;
 
-// @media screen and (max-width: 767px) {
-// height: 3em;
-// margin: 0.5em;
-// }
-// `;
+@media screen and (max-width: 767px) {
+height: 3em;
+}
+`;
 
 
 const Footer = () => {
@@ -65,15 +62,23 @@ const Footer = () => {
             <p>Contact:</p>
             <StyledFooterLink to="paul.evans@chasacademy.se">paul.evans@chasacademy.se</StyledFooterLink>
             <p to="/mobile">+46 739908858</p>
+            <Icons />
         </StyledFooter>
+        
     );
 }
 
-//  <IconContainer> 
-//  <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={linkedIcon} alt="LinkedIn"/> </a>
-//  <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={instaIcon} alt="Instagram"/> </a>
-//  <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={githubIcon} alt="GitHub"/> </a>
-//  </IconContainer> 
+const Icons = () => {
+  return (
+    <IconContainer> 
+    <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={linkedIcon} alt="LinkedIn"/> </a>
+    <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={instaIcon} alt="Instagram"/> </a>
+    <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={githubIcon} alt="GitHub"/> </a>
+    </IconContainer>
+  );
+}
+
+ 
 
 
 export default Footer;

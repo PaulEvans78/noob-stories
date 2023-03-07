@@ -1,6 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 // import React, { useState } from "react";
+import styled from "styled-components";
+
 
 import {
     Link
@@ -13,13 +14,26 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     grid-area: top;
-    padding-right: 2.5em;
+    /* padding-right: 2em; */
     font-family: 'Roboto', sans-serif;
+    font-weight: 600;
     color: whitesmoke;
     font-size: 1.25rem;
 
     @media screen and (max-width: 767px) {
     flex-direction: row-reverse;
+    padding: 0em 3em 0em 3em;
+    
+    /* align-items: flex-start;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    border-left: 2px solid pink;
+    margin-top: 0;
+    text-align: right;
+    transform: translateX(500px);
+    transition: 0.5s ease-in-out; */
     }
 `;
 
@@ -49,13 +63,18 @@ const StyledHamburger = styled.div`
 
 
 const Navbar = () => {
+    // const [open, setOpen] = useState(false);
     return (
-        <StyledNav>
+        <StyledNav style={{transform: open ?"translateX(0px)" : ""}}>
             <StyledLink to="/about">About</StyledLink>
             <StyledLink to="/cv">CV</StyledLink>
             <StyledLink to="/portfolio">Portfolio</StyledLink>
             <StyledLink to="/contact">Contact</StyledLink>
+
+            <div onClick={() => setOpen(!open).StyledHamburger}>
             <Hamburger />
+            </div>
+
         </StyledNav>
         
     );
