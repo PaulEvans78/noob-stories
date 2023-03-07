@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import logo from './assets/logo.png';
 // import Main from "./main";
 
 
@@ -15,14 +16,6 @@ import {
 
 
 // LOGO
-
-import logo from './assets/logo.png';
-
-// const MyButton = styled.button`
-//   padding: 4em;
-//   background-color: papayawhip;
-// `;
-
 const LogoContainer = styled.div`
 background-image: linear-gradient(#27dff7, #242424);
 padding-left: 1.5em;
@@ -38,7 +31,6 @@ const StyledImg = styled.img`
 
 
 // MAIN CONTAINER
-
 const MainContainer = styled.div`
 grid-area: main;
 
@@ -48,7 +40,6 @@ const GridContainer = styled.div`
 min-height: 100vh;
 min-width: 400px;
 display: grid;
-/* border: 1px solid turquoise; */
 grid-template-rows: 7rem repeat(3, 1fr) 7rem;
 grid-template-columns: repeat(5, 1fr);
 grid-template-areas:
@@ -72,7 +63,6 @@ grid-template-areas:
 
 
 //APP
-
 function App() {
 
   return (

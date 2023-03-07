@@ -19,7 +19,7 @@ const StyledFooter = styled.footer`
   padding: 0em 2em 0em 2em;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  /* font-size: 1rem; */
+  
   color: whitesmoke;
 
   @media screen and (max-width: 767px) {

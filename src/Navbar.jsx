@@ -39,7 +39,6 @@ const StyledNav = styled.nav`
 
 const StyledLink = styled(Link)`
     color: white;
-    /* background-color: turquoise; */
     border-radius: 8px;
 
     @media screen and (max-width: 767px) {
@@ -62,6 +61,7 @@ const StyledHamburger = styled.div`
 `;
 
 
+//NAVBAR
 const Navbar = () => {
     // const [open, setOpen] = useState(false);
     return (
@@ -80,8 +80,8 @@ const Navbar = () => {
     );
 }
 
-//HAMBURGER MENU
 
+//HAMBURGER MENU
 function Hamburger() {
     return (  
       <StyledHamburger>
