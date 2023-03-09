@@ -82,7 +82,6 @@ function App() {
           </Route>
         </Switch>
         <h1>Hello Paul</h1>
-        {/* <Main /> */}
         </MainContainer>
           <Footer />
       </GridContainer>
