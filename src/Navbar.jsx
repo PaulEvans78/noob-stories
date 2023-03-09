@@ -60,6 +60,12 @@ const StyledHamburger = styled.div`
     }
 `;
 
+const DropDownul = styled.ul`
+    display: none;
+`;
+
+
+
 
 //NAVBAR
 const Navbar = () => {
@@ -68,7 +74,13 @@ const Navbar = () => {
         <StyledNav style={{transform: open ?"translateX(0px)" : ""}}>
             <StyledLink to="/about">About</StyledLink>
             <StyledLink to="/cv">CV</StyledLink>
-            <StyledLink to="/portfolio">Portfolio</StyledLink>
+            <StyledLink to="/portfolio">Portfolio
+            <DropDownul>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+            </DropDownul>
+            </StyledLink> 
             <StyledLink to="/contact">Contact</StyledLink>
 
             <div onClick={() => setOpen(!open).StyledHamburger}>

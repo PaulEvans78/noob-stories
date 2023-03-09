@@ -2,6 +2,13 @@
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Cv from "./pages/Cv";
+// import Contact from "./pages/Contact";
+// import PortfolioFilm from "./pages/PortfolioFilm>";
+// import PortfolioStills from "./pages/PortfolioStills";
+// import PortfolioWeb from "./pages/PortfolioWeb";
 import logo from './assets/logo.png';
 
 
@@ -67,17 +74,25 @@ function App() {
   return (
     <Router>
       <GridContainer>
+      
       <LogoContainer> 
-        <StyledImg  src={logo} alt="Logo"/> 
+      <StyledImg src={logo} alt="Logo"/>
       </LogoContainer>
+      
         <Navbar />
         <MainContainer>
         <Switch>
-          <Route path="/about">
+          <Route path="/About">
             <p>About</p>
           </Route>
-          <Route path="/portfolio">
+          <Route path="/Cv">
+            <p>CV</p>
+          </Route>
+          <Route path="/Portfolio">
             <p>Portfolio</p>
+          </Route>
+          <Route path="/Contact">
+            <p>Contact</p>
           </Route>
         </Switch>
         <h1>Hello Paul</h1>

@@ -60,8 +60,8 @@ const Footer = () => {
     return (
         <StyledFooter>
             <p>Contact:</p>
-            <StyledFooterLink to="paul.evans@chasacademy.se">paul.evans@chasacademy.se</StyledFooterLink>
-            <p to="/mobile">+46 739908858</p>
+            <a href="mailto:paul.evans@chasacademy.se"><StyledFooterLink>paul.evans@chasacademy.se</StyledFooterLink> </a>
+            <p>+46 739908858</p>
             <Icons />
         </StyledFooter>
         
