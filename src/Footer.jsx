@@ -72,8 +72,8 @@ const Icons = () => {
   return (
     <IconContainer> 
     <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={linkedIcon} alt="LinkedIn"/> </a>
-    <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={instaIcon} alt="Instagram"/> </a>
-    <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={githubIcon} alt="GitHub"/> </a>
+    <a href="https://www.instagram.com/paulevanscreative/"><StyledIcon  src={instaIcon} alt="Instagram"/> </a>
+    <a href="https://github.com/PaulEvans78"><StyledIcon  src={githubIcon} alt="GitHub"/> </a>
     </IconContainer>
   );
 }
