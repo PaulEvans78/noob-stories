@@ -95,6 +95,7 @@ color: whitesmoke;
 const StyledMainImg = styled.img`
 width: 40vw;
 margin: 0em 2em 0em 2em;
+box-shadow: 5px 5px 5px #1a1a1a;
 `;
 
 
