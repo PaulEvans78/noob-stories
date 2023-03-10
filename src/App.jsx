@@ -1,9 +1,11 @@
 // import React, { useState } from "react";
 import styled from "styled-components";
-// import Home from './pages/Home';
 import Navbar from "./Navbar";
-// import Main from "./Main";
 import Footer from "./Footer";
+import logo from './assets/logo.png';
+import dude from './assets/dude.png';
+// import Home from './pages/Home';
+// import Main from "./Main";
 // import Home from "./pages/Home";
 // import About from "./pages/About";
 // import Cv from "./pages/Cv";
@@ -11,7 +13,6 @@ import Footer from "./Footer";
 // import PortfolioFilm from "./pages/PortfolioFilm>";
 // import PortfolioStills from "./pages/PortfolioStills";
 // import PortfolioWeb from "./pages/PortfolioWeb";
-import logo from './assets/logo.png';
 // import Hero from "./Hero";
 
 
@@ -72,6 +73,39 @@ grid-template-areas:
 `;
 
 
+const StyledImgContainer = styled.div`
+grid-area: main;
+display: flex;
+padding: 1em;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+font-family: 'Roboto', sans-serif;
+font-size: 1.5rem;
+font-weight: bold;
+color: whitesmoke;
+
+@media screen and (max-width: 767px) {
+    flex-direction: row-reverse;
+    padding: 0em 3em 0em 3em;
+    flex-direction: column;
+    }
+`;
+
+const StyledMainImg = styled.img`
+width: 40vw;
+margin: 0em 2em 0em 2em;
+`;
+
+
+
+// const StyledImgTextContainer = styled.p`
+// font-family: 'Roboto', sans-serif;
+//     font-weight: 600;
+//     color: whitesmoke;
+//     font-size: 1.25rem;
+// `;
+
 //APP
 function App() {
 
@@ -100,7 +134,17 @@ function App() {
             <p>Contact</p>
           </Route>
         </Switch>
-        <h1>Hello Paul</h1>
+        <h1>The Dude</h1>
+        <StyledImgContainer>
+          <StyledMainImg src={dude} alt="The dude"/>
+          <p>“LET ME EXPLAIN SOMETHING TO YOU. UM, I AM NOT ‘MR. LEBOWSKI.’ 
+            YOU’RE MR. LEBOWSKI. I’M THE DUDE. SO THAT’S WHAT YOU CALL ME. 
+            YOU KNOW, THAT OR, UH, HIS DUDENESS, OR UH, DUDER, OR EL DUDERINO 
+            IF YOU’RE NOT INTO THE WHOLE BREVITY THING.” – THE DUDE</p>
+        </StyledImgContainer>
+        {/* <StyledImgTextContainer>
+          
+        </StyledImgTextContainer> */}
         </MainContainer>
           <Footer />
       </GridContainer>

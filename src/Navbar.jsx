@@ -19,6 +19,7 @@ const StyledNav = styled.nav`
     font-weight: 600;
     color: whitesmoke;
     font-size: 1.25rem;
+    
     @media screen and (max-width: 767px) {
     flex-direction: row-reverse;
     padding: 0em 3em 0em 3em;
