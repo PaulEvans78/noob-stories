@@ -19,27 +19,25 @@ const StyledNav = styled.nav`
     font-weight: 600;
     color: whitesmoke;
     font-size: 1.25rem;
-
     @media screen and (max-width: 767px) {
     flex-direction: row-reverse;
     padding: 0em 3em 0em 3em;
-    
-    /* align-items: flex-start;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 50%;
-    border-left: 2px solid pink;
-    margin-top: 0;
-    text-align: right;
-    transform: translateX(500px);
-    transition: 0.5s ease-in-out; */
     }
+`;
+
+const StyledNavul = styled.ul`
+    list-style-type: none;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    width: 100%;
 `;
 
 const StyledLink = styled(Link)`
     color: white;
     border-radius: 8px;
+    text-decoration: none;
+
 
     @media screen and (max-width: 767px) {
     display: none;
@@ -54,15 +52,12 @@ const StyledHamburger = styled.div`
     justify-content: space-around;
     flex-flow: column nowrap;
     z-index: 10;
-
     @media screen and (max-width: 767px) {
     display: flex;
     }
 `;
 
-const DropDownul = styled.ul`
-    display: none;
-`;
+
 
 
 
@@ -71,19 +66,17 @@ const DropDownul = styled.ul`
 const Navbar = () => {
     // const [open, setOpen] = useState(false);
     return (
-        <StyledNav style={{transform: open ?"translateX(0px)" : ""}}>
-            <StyledLink to="/about">About</StyledLink>
-            <StyledLink to="/cv">CV</StyledLink>
-            <StyledLink to="/portfolio">Portfolio
-            <DropDownul>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-            </DropDownul>
-            </StyledLink> 
-            <StyledLink to="/contact">Contact</StyledLink>
+        // <StyledNav style={{transform: open ?"translateX(0px)" : ""}}>
+        <StyledNav>
+            <StyledNavul>
+            <li><StyledLink to="/about">About</StyledLink></li>
+            <li><StyledLink to="/cv">CV</StyledLink></li>
+            <li><StyledLink to="/portfolio">Portfolio</StyledLink></li>
+            <li><StyledLink to="/contact">Contact</StyledLink></li>
+            </StyledNavul>
 
-            <div onClick={() => setOpen(!open).StyledHamburger}>
+            {/* <div onClick={() => setOpen(!open).StyledHamburger}> */}
+            <div>
             <Hamburger />
             </div>
 

@@ -27,7 +27,7 @@ const StyledFooter = styled.footer`
   }
 `;
 
-const StyledFooterLink = styled(Link)`
+const StyledFooterLink = styled.p`
     color: white;
     border-radius: 8px;
 `;
@@ -50,6 +50,8 @@ const StyledIcon = styled.img`
 height: 2em;
 margin: 0.5em;
 
+
+
 @media screen and (max-width: 767px) {
 height: 3em;
 }
@@ -60,7 +62,7 @@ const Footer = () => {
     return (
         <StyledFooter>
             <p>Contact:</p>
-            <a href="mailto:paul.evans@chasacademy.se"><StyledFooterLink>paul.evans@chasacademy.se</StyledFooterLink> </a>
+            <StyledFooterLink><a href="mailto:paul.evans@chasacademy.se">paul.evans@chasacademy.se</a></StyledFooterLink> 
             <p>+46 739908858</p>
             <Icons />
         </StyledFooter>
@@ -69,11 +71,12 @@ const Footer = () => {
 }
 
 const Icons = () => {
+  
   return (
     <IconContainer> 
-    <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  src={linkedIcon} alt="LinkedIn"/> </a>
-    <a href="https://www.instagram.com/paulevanscreative/"><StyledIcon  src={instaIcon} alt="Instagram"/> </a>
-    <a href="https://github.com/PaulEvans78"><StyledIcon  src={githubIcon} alt="GitHub"/> </a>
+    <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  className = "linkedIcon" src={linkedIcon} alt="LinkedIn"/> </a>
+    <a href="https://www.instagram.com/paulevanscreative/"><StyledIcon  className = "instaIcon" src={instaIcon} alt="Instagram"/> </a>
+    <a href="https://github.com/PaulEvans78"><StyledIcon  className = "gitIcon" src={githubIcon} alt="GitHub"/> </a>
     </IconContainer>
   );
 }

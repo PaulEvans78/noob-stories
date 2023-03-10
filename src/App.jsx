@@ -1,6 +1,8 @@
 // import React, { useState } from "react";
 import styled from "styled-components";
+// import Home from './pages/Home';
 import Navbar from "./Navbar";
+// import Main from "./Main";
 import Footer from "./Footer";
 // import Home from "./pages/Home";
 // import About from "./pages/About";
@@ -10,6 +12,7 @@ import Footer from "./Footer";
 // import PortfolioStills from "./pages/PortfolioStills";
 // import PortfolioWeb from "./pages/PortfolioWeb";
 import logo from './assets/logo.png';
+// import Hero from "./Hero";
 
 
 import {
@@ -27,6 +30,7 @@ background-image: linear-gradient(#27dff7, #242424);
 padding-left: 1.5em;
 grid-area: logo;
 `;
+
 
 const StyledImg = styled.img`
   height: 80%;
@@ -80,6 +84,7 @@ function App() {
       </LogoContainer>
       
         <Navbar />
+        {/* <Hero /> */}
         <MainContainer>
         <Switch>
           <Route path="/About">
