@@ -128,7 +128,9 @@ text-align: right;
   transition: all 0.2s linear;
 }
 
-
+.drop {
+  font-size:1rem;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

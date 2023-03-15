@@ -118,7 +118,7 @@ const Navbar = () => {
             <StyledNavul className="navul" style={{transform: open ? "translateX(0px)" : ""}}>
             <li><StyledLink className="dropDownli" to="/about">About</StyledLink></li>
             <li><StyledLink className="dropDownli" to="/cv">CV</StyledLink></li>
-            <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpen(!open)}} >Portfolio ▽</StyledLink>
+            <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpen(!open)}} >Portfolio <span class="drop">▽</span></StyledLink>
                 <StyledDropul className={`dropDownul ${open? 'active' : 'inactive'}`} ref={menuRef}>
                     <StyledDropLink className="dropDownli" to="/portfolioFilm">Film</StyledDropLink>
                     <StyledDropLink className="dropDownli" to="/portfolioStills">Stills</StyledDropLink>
