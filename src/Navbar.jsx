@@ -1,6 +1,7 @@
-import React from "react";
-// import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import dude from './assets/dude.png';
+
 
 
 import {
@@ -14,22 +15,20 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     grid-area: top;
-    /* padding-right: 2em; */
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: whitesmoke;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+     
     
     @media screen and (max-width: 767px) {
-    flex-direction: row-reverse;
-    padding: 0em 3em 0em 3em;
+    padding: 0em 3em 0em 1em;
     }
 `;
 
 const StyledNavul = styled.ul`
     list-style-type: none;
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-around;
     width: 100%;
 `;
@@ -41,7 +40,7 @@ const StyledLink = styled(Link)`
 
 
     @media screen and (max-width: 767px) {
-    display: none;
+    display: block;
     }
 `;
 
@@ -53,42 +52,102 @@ const StyledHamburger = styled.div`
     justify-content: space-around;
     flex-flow: column nowrap;
     z-index: 10;
+    
     @media screen and (max-width: 767px) {
     display: flex;
     }
 `;
 
 
+const StyledDropLink = styled(Link)`
+    color: white;
+    text-decoration: none;
+    padding: 0.25em 0em 0.25em 0em;
+`;
+
+const StyledDropul = styled.ul`
+    text-align: right;
+    padding: 1em;
+`;
 
 
+
+const StyledImg = styled.img`
+  height: 4em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.5em;
+  box-shadow: 6px 6px 10px #1a1a1a;
+  border-radius: 8px;
+`;
 
 
 //NAVBAR
 const Navbar = () => {
-    // const [open, setOpen] = useState(false);
-    return (
-        // <StyledNav style={{transform: open ?"translateX(0px)" : ""}}>
-        <StyledNav>
-            <StyledNavul>
-            <li><StyledLink to="/about">About</StyledLink></li>
-            <li><StyledLink to="/cv">CV</StyledLink></li>
-            <li><StyledLink to="/portfolio">Portfolio</StyledLink></li>
-            <li><StyledLink to="/contact">Contact</StyledLink></li>
-            </StyledNavul>
+    const [open, setOpen] = useState(false);
 
+    let menuRef = useRef();
+
+    useEffect(() => {
+        let handler =(e)=>{
+            if(!menuRef.current.contains(e.target)){
+                setOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handler);
+
+        return() =>{
+            document.removeEventListener("mousedown", handler)
+        }
+    });
+
+
+
+    return (
+        
+        
+
+        <StyledNav className="navbar" > 
+
+       
+                <Link to="/">
+                    <StyledImg src={dude} alt="The dude"/>
+                </Link>
+
+            <StyledNavul className="navul" style={{transform: open ? "translateX(0px)" : ""}}>
+            <li><StyledLink className="dropDownli" to="/about">About</StyledLink></li>
+            <li><StyledLink className="dropDownli" to="/cv">CV</StyledLink></li>
+            <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpen(!open)}} >Portfolio ▽</StyledLink>
+                <StyledDropul className={`dropDownul ${open? 'active' : 'inactive'}`} ref={menuRef}>
+                    <StyledDropLink className="dropDownli" to="/portfolioFilm">Film</StyledDropLink>
+                    <StyledDropLink className="dropDownli" to="/portfolioStills">Stills</StyledDropLink>
+                    <StyledDropLink className="dropDownli" to="/portfolioWeb">Web</StyledDropLink>
+                </StyledDropul>
+            </li>
+            <li><StyledLink className="dropDownli" to="/contact">Contact</StyledLink></li>
+            </StyledNavul>
+            
             {/* <div onClick={() => setOpen(!open).StyledHamburger}> */}
-            <div>
+            <div onClick={() => setOpen(!open).StyledHamburger}>
             <Hamburger />
             </div>
-
+            
+            
         </StyledNav>
         
+
     );
 }
 
 
+
+
+
 //HAMBURGER MENU
 function Hamburger() {
+    // const [open, setOpen] = useState(false);
+
     return (  
       <StyledHamburger>
            <div className="hamburgerMenu">

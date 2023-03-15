@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from "react";
+// import styled from 'styled-components';
 
 function Cv() {
 
     return (
-        <p>Cv</p>
+        <p>The real Cv page</p>
     );
 }
 

@@ -6,6 +6,7 @@
   font-weight: 400;
 
   background-color: #242424; 
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -49,33 +50,13 @@ a:hover {
   height: 2.2em;
 }
 
-/* .dropdownul {
-    width: 2em;
-    background-color: #242424;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center
-} */
 
-/* .dropdown:hover .dropdownul {
-  display:flex;
-} */
+li {
+  list-style-type: none;
+}
 
-/* li {
-    width: 2em;
-    /* position: relative; */
-    /* background-color: #242424; 
-    display: block;
-    position: relative;
-    top: 5em; */
-    /* flex-direction: column;
-    justify-content: space-between;
-    align-items: center; */
-    /* list-style-type: none;
-}  */
 
-/* ADD to app */
+
 h1 {
   font-size: 4em;
   line-height: 1.1;
@@ -83,14 +64,9 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   text-align: center;
+  /* text-shadow: 6px 6px 5px #f6f2f2; */
 }
 
-/* h2 {
-font-family: 'Roboto', sans-serif;
-font-size: 2rem;
-font-weight: bold;
-color: whitesmoke;
-} */
 
 p {
   color: whitesmoke;
@@ -99,65 +75,45 @@ p {
 
 
 
-/* button {
-  border-radius: 8px;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  background-color: aquamarine;
-  border: 3px solid rgb(223, 127, 255);
-  background-color: aquamarine;
-  border: 3px solid rgb(223, 127, 255);
+/* .portfolioLink{
+  
 } */
 
-/* button:hover {
-  border-color: #646cff;
+.dropDownul {
+  /* display: none; */
+  /* display: flex;
+  flex-direction: column;  */
+  position: absolute;
+  /* left: 26em; */
+  top: 1.5em;
+  background-image: linear-gradient(#4895a1, #242424);
+  border-radius: 10px;
+  /* background-color: #242424; */
+  width: 3em;
+}
+
+.dropDownul.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.dropDownul.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+/* .portfolioLink:hover .dropDownul {
+  display: block;
 } */
 
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
-
-/* h2 {
-  color: pink;
-} */
-
-/* .emoji {
-  margin-top: 20px;
-  font-size: 40px;
-} */
-
-
-
-/* ul {
-  padding: 0;
-} */
-
-/* .nav-links {
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
-} */
-
-/* .footer-links {
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
-} */
-
-/* .hamburger {
-  display: none;
-  width: 2rem;
-  height: 2rem;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-  z-index: 10;
-}  */
-
+.dropDownli {
+display: block;
+text-align: right;
+}
 
 
 
@@ -169,7 +125,7 @@ button:focus-visible {
   border-radius: 10px;
   background-color: whitesmoke;
   transform-origin: 1px;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 
 
@@ -180,6 +136,11 @@ button:focus-visible {
   }
 
 }
+
+
+
+
+/* BREAK POINT */
 
   @media screen and (max-width: 767px) {
 
@@ -195,41 +156,47 @@ button:focus-visible {
       height: 3em;
     }
     
-  /* .nav-links {
+    .dropDownul {
+      display: none;
+    }
+
+   .navbar .hamburger {
+    display: block;
+    cursor: pointer;
+   }
+
+   .navbar .navul  {
     position: absolute;
     display: block;
     top: 0;
     right: 0;
     height: 100vh;
-    width: 50%;
-    background-image: linear-gradient(turquoise, #38ceba);
-    border-left: 2px solid pink;
-    padding: 8em 3em 0em 3em;
-    margin-top: 0;
-    text-align: right;
-    transform: translateX(500px);
-  } */
-
-  /* .footer-links {
-    font-size: 0.75em;
-  } */
-
-  /* .hamburger {
-    display: flex;
-    padding-top: 10px;
-    margin-left: 10px;
-  } */
-
-  /* ul {
-    padding: 0;
-  } */
-  
-
-  /* .nav-links li {
+    background-image: linear-gradient(#242424, #27dff7);
+    margin-top: 4.5em;
+    /* border-radius: 8px; */
     padding: 20px;
-    border-bottom: 1px solid pink;
-  } */
+    width: 50%;
+    transform: translateX(700px);
+    transition: 0.5s ease-in-out; 
+}
 
+
+    
+
+    /* border-bottom: 1px solid whitesmoke; */
+   
+
+   .navbar .navul .dropDownli {
+    /* border-bottom: 1px solid whitesmoke; */
+    /* border-radius: 0; */
+    padding-bottom: 1em ;
+    margin: 1em;
+   }
+
+   /* .navbar .navul .dropDownli:last-of-type {
+    border-bottom: 0px solid whitesmoke;
+   } */
+   
   
 }
 

@@ -4,9 +4,6 @@ import linkedIcon from './assets/linkedIn_icon_white.png';
 import instaIcon from './assets/instagram_icon_white.png';
 import githubIcon from './assets/github_white.png';
 
-import {
-    Link
-} from "react-router-dom";
 
 
 const StyledFooter = styled.footer`
@@ -19,8 +16,8 @@ const StyledFooter = styled.footer`
   padding: 0em 2em 0em 2em;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  
   color: whitesmoke;
+  text-shadow: 6px 6px 5px #1a1a1a;
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
@@ -49,6 +46,8 @@ align-items: center;
 const StyledIcon = styled.img`
 height: 2em;
 margin: 0.5em;
+box-shadow: 6px 6px 10px #1a1a1a;
+border-radius: 8px;
 
 
 

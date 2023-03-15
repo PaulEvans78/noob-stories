@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from "react";
+// import styled from 'styled-components';
 
 function PortfolioWeb() {
 
     return (
-        <p>PortfolioWeb</p>
+        <p>The real PortfolioWeb page</p>
     );
 }
 

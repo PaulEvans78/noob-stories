@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+// import styled from 'styled-components';
 
 function About() {
 
     return (
-        <p>About</p>
+        <p>The real About page</p>
+        
     );
 }
 
