@@ -31,6 +31,7 @@ const StyledNavul = styled.ul`
     display: flex;
     justify-content: space-around;
     width: 100%;
+    /* transform: open ?  */
 `;
 
 const StyledLink = styled(Link)`
@@ -84,6 +85,9 @@ const StyledImg = styled.img`
 
 
 //NAVBAR
+// https://www.youtube.com/watch?v=ZlDASfsL7FI
+
+
 const Navbar = () => {
     const [open, setOpen] = useState(false);
 
@@ -119,7 +123,7 @@ const Navbar = () => {
 
             <li><StyledLink className="dropDownli" to="/about">About</StyledLink></li>
             <li><StyledLink className="dropDownli" to="/cv">CV</StyledLink></li>
-            <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpen(!open)}} >Portfolio <span class="drop">▽</span></StyledLink>
+            <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpen(!open)}} >Portfolio <span className="drop">▽</span></StyledLink>
 
                 <StyledDropul className={`dropDownul ${open? 'active' : 'inactive'}`} >
                     <StyledDropLink className="dropDownli" to="/portfolioFilm" onClick={() => {setOpen(!close)}}>Film</StyledDropLink>

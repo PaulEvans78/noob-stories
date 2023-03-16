@@ -164,11 +164,11 @@ text-align: right;
       flex-direction: column;
       align-items: center;
       margin-top: 7.5em;
-      
+      /* padding: 1em; */
     }
 
    .navbar .hamburger {
-    display: flex; /* var block */
+    display: flex; /* was block */
     cursor: pointer;
    }
 
