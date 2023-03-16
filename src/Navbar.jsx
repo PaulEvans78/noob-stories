@@ -55,6 +55,7 @@ const StyledHamburger = styled.div`
     
     @media screen and (max-width: 767px) {
     display: flex;
+    
     }
 `;
 
@@ -86,21 +87,21 @@ const StyledImg = styled.img`
 const Navbar = () => {
     const [open, setOpen] = useState(false);
 
-    let menuRef = useRef();
+    // let menuRef = useRef();
 
-    useEffect(() => {
-        let handler =(e)=>{
-            if(!menuRef.current.contains(e.target)){
-                setOpen(false);
-            }
-        };
+    // useEffect(() => {
+    //     let handler =(e)=>{
+    //         if(!menuRef.current.contains(e.target)){
+    //             setOpen(false);
+    //         }
+    //     };
 
-        document.addEventListener("mousedown", handler);
+    //     document.addEventListener("mousedown", handler);
 
-        return() =>{
-            document.removeEventListener("mousedown", handler)
-        }
-    });
+    //     return() =>{
+    //         document.removeEventListener("mousedown", handler)
+    //     }
+    // });
 
 
 
@@ -113,23 +114,25 @@ const Navbar = () => {
        
                 <Link to="/">
                     <StyledImg src={dude} alt="The dude"/>
-                </Link>
-
+                </Link>          
             <StyledNavul className="navul" style={{transform: open ? "translateX(0px)" : ""}}>
+
             <li><StyledLink className="dropDownli" to="/about">About</StyledLink></li>
             <li><StyledLink className="dropDownli" to="/cv">CV</StyledLink></li>
             <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpen(!open)}} >Portfolio <span class="drop">▽</span></StyledLink>
-                <StyledDropul className={`dropDownul ${open? 'active' : 'inactive'}`} ref={menuRef}>
-                    <StyledDropLink className="dropDownli" to="/portfolioFilm">Film</StyledDropLink>
-                    <StyledDropLink className="dropDownli" to="/portfolioStills">Stills</StyledDropLink>
-                    <StyledDropLink className="dropDownli" to="/portfolioWeb">Web</StyledDropLink>
+
+                <StyledDropul className={`dropDownul ${open? 'active' : 'inactive'}`} >
+                    <StyledDropLink className="dropDownli" to="/portfolioFilm" onClick={() => {setOpen(!close)}}>Film</StyledDropLink>
+                    <StyledDropLink className="dropDownli" to="/portfolioStills" onClick={() => {setOpen(!close)}}>Stills</StyledDropLink>
+                    <StyledDropLink className="dropDownli" to="/portfolioWeb" onClick={() => {setOpen(!close)}}>Web</StyledDropLink>
                 </StyledDropul>
+
             </li>
             <li><StyledLink className="dropDownli" to="/contact">Contact</StyledLink></li>
             </StyledNavul>
             
-            {/* <div onClick={() => setOpen(!open).StyledHamburger}> */}
             <div onClick={() => setOpen(!open).StyledHamburger}>
+            {/* <div> */}
             <Hamburger />
             </div>
             
@@ -155,6 +158,7 @@ function Hamburger() {
            <div className="burger burger2"></div>
            <div className="burger burger3"></div>
           </div>
+          {/* <StyledNavul open={open}/> */}
       </StyledHamburger>
     );
   }

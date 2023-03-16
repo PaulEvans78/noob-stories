@@ -159,12 +159,16 @@ text-align: right;
     }
     
     .dropDownul {
-      display: none;
-      /* display: block; */
+      /* display: none; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 7.5em;
+      
     }
 
    .navbar .hamburger {
-    display: block;
+    display: flex; /* var block */
     cursor: pointer;
    }
 
