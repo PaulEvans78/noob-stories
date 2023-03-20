@@ -25,16 +25,16 @@ const StyledFooter = styled.footer`
 `;
 
 const StyledFooterLink = styled.p`
-    color: white;
-    border-radius: 8px;
+  color: white;
+  border-radius: 8px;
 `;
 
 const IconContainer = styled.div`
-grid-area: footer;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
+  grid-area: footer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 
 @media screen and (max-width: 767px) {
   flex-direction: column;
@@ -44,15 +44,15 @@ align-items: center;
 
 
 const StyledIcon = styled.img`
-height: 2em;
-margin: 0.5em;
-box-shadow: 6px 6px 10px #1a1a1a;
-border-radius: 8px;
+  height: 2em;
+  margin: 0.5em;
+  box-shadow: 6px 6px 10px #1a1a1a;
+  border-radius: 8px;
 
 
 
 @media screen and (max-width: 767px) {
-height: 3em;
+  height: 3em;
 }
 `;
 

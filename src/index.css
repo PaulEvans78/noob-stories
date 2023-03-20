@@ -26,17 +26,13 @@ body {
 
  a {
   color: whitesmoke;
-  /* text-decoration: underline; */
+  text-decoration: none;
 }
 
 
 a:hover {
   color: #edadfb;
 } 
-
-/* a:visited {
-  color: yellow;
-} */
 
 .linkedIcon:hover {
   height: 2.2em;
@@ -64,7 +60,6 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   text-align: center;
-  /* text-shadow: 6px 6px 5px #f6f2f2; */
 }
 
 
@@ -72,43 +67,22 @@ p {
   color: whitesmoke;
 }
 
+/* DROP DOWN MOVED TO STYLED COMPONENTS */
 
 
-
-/* .portfolioLink{
-  
-} */
-
-.dropDownul {
-  /* display: none; */
-  /* display: flex;
-  flex-direction: column;  */
-  position: absolute;
-  /* left: 26em; */
-  top: 3.5em;
-  background-image: linear-gradient(#4895a1, #242424);
-  border-radius: 10px;
-  /* background-color: #242424; */
-  width: 3em;
-}
-
-.dropDownul.active{
+/* .dropDownul.active{
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   transition: var(--speed) ease;
-}
+} */
 
 .dropDownul.inactive{
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px); /* was -20px */
+  transform: translateY(-20px); 
   transition: var(--speed) ease;
 }
-
-/* .portfolioLink:hover .dropDownul {
-  display: block;
-} */
 
 .dropDownli {
 display: block;
@@ -116,21 +90,6 @@ text-align: right;
 }
 
 
-
-/* BURGER ICON BARS  */
-.burger {
-  width: 2rem;
-  height: 0.25rem;
-  margin-bottom: 0.25rem;
-  border-radius: 10px;
-  background-color: whitesmoke;
-  transform-origin: 1px;
-  transition: all 0.2s linear;
-}
-
-.drop {
-  font-size:1rem;
-}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -158,20 +117,11 @@ text-align: right;
       height: 3em;
     }
     
-    .dropDownul {
-      /* display: none; */
-      background-image: linear-gradient(#263E43, #388d98);
-      width: 75%;
-      /* display: flex;
-      flex-direction: column;
-      align-items: center; */
-      margin-top: 8em;
-      /* margin-right: 4em; */
-      padding: 1em;
-    }
+    
 
+    /* .navbar .hamburger */
 
-   .navbar .hamburger {
+   .navbar  {
     display: flex; /* was block */
     cursor: pointer;
    }
@@ -192,23 +142,10 @@ text-align: right;
 }
 
 
-    
-
-    /* border-bottom: 1px solid whitesmoke; */
-   
-
    .navbar .navul .dropDownli {
-    /* border-bottom: 1px solid whitesmoke; */
-    /* border-radius: 0; */
     padding-bottom: 1em ;
     margin: 1em 1em 0em 0em;
-    /* margin-bottom: 1em; */
    }
 
-   /* .navbar .navul .dropDownli:last-of-type {
-    border-bottom: 0px solid whitesmoke;
-   } */
-   
-  
 }
 

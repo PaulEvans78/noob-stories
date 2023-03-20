@@ -38,6 +38,8 @@ const StyledLink = styled(Link)`
     color: white;
     border-radius: 8px;
     text-decoration: none;
+    /* display: block; */
+/* text-align: right; */
 
 
     @media screen and (max-width: 767px) {
@@ -60,6 +62,15 @@ const StyledHamburger = styled.div`
     }
 `;
 
+const StyledBurgerBars = styled.div `
+    width: 2rem;
+    height: 0.25rem;
+    margin-bottom: 0.25rem;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    transform-origin: 1px;
+    transition: all 0.2s linear;
+`;
 
 const StyledDropLink = styled(Link)`
     color: white;
@@ -70,6 +81,26 @@ const StyledDropLink = styled(Link)`
 const StyledDropul = styled.ul`
     text-align: right;
     padding: 1em;
+
+    position: absolute;
+    top: 3.5em;
+    background-image: linear-gradient(#4895a1, #242424);
+    border-radius: 10px;
+    width: 3em;
+
+    /* ${({ openDD }) => openDD  && `
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px); 
+        transition: var(--speed) ease;
+    `} */
+
+    @media screen and (max-width: 767px) {
+     background-image: linear-gradient(#263E43, #388d98);
+     width: 75%;
+     margin-top: 7.5em;
+     padding: 1em;
+    }
 `;
 
 
@@ -81,6 +112,11 @@ const StyledImg = styled.img`
   margin-top: 0.5em;
   box-shadow: 6px 6px 10px #1a1a1a;
   border-radius: 8px;
+`;
+
+
+const StyledSpanDrop = styled.span`
+  font-size:1rem;
 `;
 
 
@@ -114,7 +150,7 @@ const Navbar = () => {
 
        
                 <Link to="/">
-                    <StyledImg src={dude} alt="The dude"/>
+                    <StyledImg src={dude} alt="The dude" onClick={() => {setOpen(false); setOpenDD(false)}}/>
                 </Link>          
 
             <StyledNavul className="navul" style={{transform: open ? "translateX(0px)" : ""}}>
@@ -122,9 +158,12 @@ const Navbar = () => {
                 <li><StyledLink className="dropDownli" to="/about" onClick={() => {setOpen(false)}}>About</StyledLink></li>
                 <li><StyledLink className="dropDownli" to="/cv" onClick={() => {setOpen(false)}}>CV</StyledLink></li>
 
-                <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpenDD(!openDD)}} >Portfolio <span className="drop">▽</span></StyledLink>
+                <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpenDD(!openDD)}} >Portfolio <StyledSpanDrop className="drop">▽</StyledSpanDrop></StyledLink>
+                
+                 {/* <li><StyledLink className="portfolioLink dropDownli" onClick={() => setOpenDD(!openDD)} >Portfolio <span className="drop">▽</span> {openDD ? }</StyledLink> */}
 
-                    <StyledDropul className={`dropDownul ${openDD? 'active' : 'inactive'}`} >
+                {/* <StyledDropul className="dropDownul" > */}
+                    <StyledDropul className={`dropDownul ${openDD? 'active' : 'inactive'}`} >   
                         <StyledDropLink className="dropDownli" to="/portfolioFilm" onClick={() => {setOpen(false); setOpenDD(false)}}>Film</StyledDropLink>
                         <StyledDropLink className="dropDownli" to="/portfolioStills" onClick={() => {setOpen(false); setOpenDD(false)}}>Stills</StyledDropLink>
                         <StyledDropLink className="dropDownli" to="/portfolioWeb" onClick={() => {setOpen(false); setOpenDD(false)}}>Web</StyledDropLink>
@@ -156,9 +195,9 @@ function Hamburger() {
     return (  
       <StyledHamburger>
            <div className="hamburgerMenu">
-           <div className="burger burger1"></div>
-           <div className="burger burger2"></div>
-           <div className="burger burger3"></div>
+           <StyledBurgerBars className="burger burger1"></StyledBurgerBars>
+           <StyledBurgerBars className="burger burger2"></StyledBurgerBars>
+           <StyledBurgerBars className="burger burger3"></StyledBurgerBars>
           </div>
           {/* <StyledNavul open={open}/> */}
       </StyledHamburger>
