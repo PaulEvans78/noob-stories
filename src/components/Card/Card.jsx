@@ -1,20 +1,35 @@
 import React from 'react';
-import { CardContainer, StyledComputerImg, StyledReactImg, StyledCardp, StyledButton } from './styles';
-import screens from '../../assets/screens.jpg';
-import react from '../../assets/react.jpg';
+import { CardContainer, StyledComputerImg, StyledReactImg, StyledCardp, StyledButton, Styledh2 } from './styles';
+import upperPic from '../../assets/screens.jpg';
+import middlePic from '../../assets/react.jpg';
 
 
 
-function Card () {
+function oldCard () {
 
     return (
     <CardContainer>
-        <StyledComputerImg src={screens} alt="Computer Screens" />
-        <StyledReactImg src={react} alt="React Logo" />
+        <StyledComputerImg src={upperPic} alt="Computer Screens" />
+        <StyledReactImg src={middlePic} alt="React Logo" />
         
-        <h2>React Portfolio</h2>
+        <Styledh2>React Portfolio</Styledh2>
         <StyledCardp>This React portfolio project is great for showcasing your skills, projects, and experience as a React developer.</StyledCardp>
         <StyledButton>View More</StyledButton>
+
+    </CardContainer>
+    )
+}
+
+function Card (props) {
+
+    return (
+    <CardContainer>
+        <StyledComputerImg src={props.upperPic} alt="Computer Screens" />
+        <StyledReactImg src={props.middlePic} alt="React Logo" />
+        
+        <Styledh2>{props.headline}</Styledh2>
+        <StyledCardp>{props.description}</StyledCardp>
+        <StyledButton>{props.buttonText}</StyledButton>
 
     </CardContainer>
     )

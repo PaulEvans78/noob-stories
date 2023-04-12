@@ -7,8 +7,9 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin-top: 2em;
-margin-bottom: 2em;
-width: 50vw;
+margin-bottom: 3em;
+margin-left: 0.5em;
+width: 30vw;
 background-color: #ffffff;
 border-radius: 10px;
 font-family: 'Roboto', sans-serif;
@@ -37,9 +38,13 @@ border: 0.25em solid white;
 border-radius: 50%;
 `;
 
+export const Styledh2 = styled.h2`
+text-align: center;
+`;
+
 export const StyledCardp = styled.p`
 color: black;
-font-size: 20px;
+font-size: 16px;
 padding: 0em 2.5em 1.5em;
 text-align: center;
 `;

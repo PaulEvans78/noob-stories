@@ -1,7 +1,7 @@
 import React from 'react';
 import dude from '../assets/dude.png';
 import styled from "styled-components";
-import Card from '../components/Card';
+import Skills from '../components/Card/skills';
 
 
 
@@ -24,6 +24,8 @@ color: whitesmoke;
     }
 `;
 
+
+
 const StyledMainImg = styled.img`
 width: 40vw;
 margin: 0em 2em 0em 2em;
@@ -43,7 +45,7 @@ const Home = () => {
         YOU KNOW, THAT OR, UH, HIS DUDENESS, OR UH, DUDER, OR EL DUDERINO 
         IF YOU’RE NOT INTO THE WHOLE BREVITY THING.” – THE DUDE</p>
     </StyledImgContainer>
-    <Card />
+    <Skills />
   </>
   );
 }

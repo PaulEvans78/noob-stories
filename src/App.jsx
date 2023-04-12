@@ -22,8 +22,15 @@ import {
 const MainContainer = styled.div`
 grid-area: main;
 display: flex;
-flex-direction: column;
+flex-direction: row;
+flex-wrap: wrap;
 align-items: center;
+
+@media screen and (max-width: 767px) {
+flex-direction: column;
+flex-wrap: nowrap;
+
+}
 
 `;
 
