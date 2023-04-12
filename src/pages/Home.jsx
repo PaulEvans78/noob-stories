@@ -1,11 +1,12 @@
 import React from 'react';
 import dude from '../assets/dude.png';
 import styled from "styled-components";
+import Card from '../components/Card';
 
 
 
 const StyledImgContainer = styled.div`
-grid-area: main;
+/* grid-area: main; */
 display: flex;
 padding: 1em;
 flex-direction: row;
@@ -42,6 +43,7 @@ const Home = () => {
         YOU KNOW, THAT OR, UH, HIS DUDENESS, OR UH, DUDER, OR EL DUDERINO 
         IF YOU’RE NOT INTO THE WHOLE BREVITY THING.” – THE DUDE</p>
     </StyledImgContainer>
+    <Card />
   </>
   );
 }

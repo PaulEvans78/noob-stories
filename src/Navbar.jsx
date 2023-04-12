@@ -8,6 +8,25 @@ import {
     Link
 } from "react-router-dom";
 
+
+// WORKSHOP
+
+
+// function showLoop (arrayToLoop) {
+//     console.log(arrayToLoop);
+
+//     for (let i = 0; i < arrayToLoop.Length; i++) {
+//         console.log(arrayToLoop[i]);
+//         returnArray.push("Hej");
+
+//     }
+//     return returnArray;
+// }
+
+// showLoop(links);
+
+
+
 const StyledNav = styled.nav`
     background-image: linear-gradient(#27dff7, #242424);
     display: flex;
@@ -31,6 +50,7 @@ const StyledNavul = styled.ul`
     display: flex;
     justify-content: space-around;
     width: 100%;
+    /* align-items: center; */
     /* transform: open ?  */
 `;
 
@@ -38,12 +58,17 @@ const StyledLink = styled(Link)`
     color: white;
     border-radius: 8px;
     text-decoration: none;
-    /* display: block; */
-/* text-align: right; */
-
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-wrap: nowrap; */
+    /* justify-content: space-around;  */
+    display: block; 
+    text-align: right;
+    margin: 1em;
 
     @media screen and (max-width: 767px) {
-    display: block;
+        display: block; 
+    
     }
 `;
 
@@ -76,12 +101,14 @@ const StyledDropLink = styled(Link)`
     color: white;
     text-decoration: none;
     padding: 0.25em 0em 0.25em 0em;
+    display: block; 
+    text-align: right;
 `;
 
 const StyledDropul = styled.ul`
     text-align: right;
     padding: 1em;
-
+    
     position: absolute;
     top: 3.5em;
     background-image: linear-gradient(#4895a1, #242424);
@@ -98,7 +125,7 @@ const StyledDropul = styled.ul`
     @media screen and (max-width: 767px) {
      background-image: linear-gradient(#263E43, #388d98);
      width: 75%;
-     margin-top: 7.5em;
+     margin-top: 10.5em;
      padding: 1em;
     }
 `;
@@ -118,6 +145,8 @@ const StyledImg = styled.img`
 const StyledSpanDrop = styled.span`
   font-size:1rem;
 `;
+
+
 
 
 //NAVBAR
@@ -144,6 +173,39 @@ const Navbar = () => {
     //     }
     // });
 
+
+const links = [
+    {
+        id: 1,
+        to: "/",
+        text: "Home",
+        onClick: () => { setOpen(false); setOpenDD(false); }
+    },
+    {
+        id: 2,
+        to: "/about",
+        text: "About",
+        onClick: () => { setOpen(false); setOpenDD(false); }
+    },
+    {
+        id: 3,
+        to: "/cv",
+        text: "CV",
+        onClick: () => { setOpen(false); setOpenDD(false); }
+    },
+    {
+        id: 4,
+        to: "/portfolio",
+        text: "Portfolio ▽",
+        onClick: () => {setOpenDD(!openDD)} 
+    },
+    {
+        id: 5,
+        to: "/contact",
+        text: "Contact",
+        onClick: () => { setOpen(false); setOpenDD(false); }
+    },
+];
     return (
         
         <StyledNav className="navbar" > 
@@ -155,11 +217,15 @@ const Navbar = () => {
 
             <StyledNavul className="navul" style={{transform: open ? "translateX(0px)" : ""}}>
 
-                <li><StyledLink className="dropDownli" to="/about" onClick={() => {setOpen(false)}}>About</StyledLink></li>
-                <li><StyledLink className="dropDownli" to="/cv" onClick={() => {setOpen(false)}}>CV</StyledLink></li>
+              {links.map(link => <StyledLink className="dropDownli" onClick={link.onClick} to={link.to} key={link.id}>{link.text}</StyledLink>)}
 
-                <li><StyledLink className="portfolioLink dropDownli" onClick={() => {setOpenDD(!openDD)}} >Portfolio <StyledSpanDrop className="drop">▽</StyledSpanDrop></StyledLink>
+                {/* <li><StyledLink className="dropDownli" to="/about" onClick={() => {setOpen(false)}}>About</StyledLink></li>
+                <li><StyledLink className="dropDownli" to="/cv" onClick={() => {setOpen(false)}}>CV</StyledLink></li> */}
+
+<li> <StyledLink className="portfolioLink dropDownli"></StyledLink>
                 
+                {/* <StyledSpanDrop className="drop">▽</StyledSpanDrop> */}
+
                  {/* <li><StyledLink className="portfolioLink dropDownli" onClick={() => setOpenDD(!openDD)} >Portfolio <span className="drop">▽</span> {openDD ? }</StyledLink> */}
 
                 {/* <StyledDropul className="dropDownul" > */}
@@ -169,8 +235,10 @@ const Navbar = () => {
                         <StyledDropLink className="dropDownli" to="/portfolioWeb" onClick={() => {setOpen(false); setOpenDD(false)}}>Web</StyledDropLink>
                     </StyledDropul>
                 </li>
+                
+                {/* const foo = [{link: "/", text: "Home"}, {link: "/contact", text: "Contact"}, {link: "/about", text: "About"}] */}
 
-                <li><StyledLink className="dropDownli" to="/contact" onClick={() => {setOpen(false)}}>Contact</StyledLink></li>
+                {/* <li><StyledLink className="dropDownli" to="/contact" onClick={() => {setOpen(false)}}>Contact</StyledLink></li> */}
             </StyledNavul>
             
             <div onClick={() => setOpen(!open).StyledHamburger}>

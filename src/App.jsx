@@ -21,6 +21,9 @@ import {
 // MAIN CONTAINER
 const MainContainer = styled.div`
 grid-area: main;
+display: flex;
+flex-direction: column;
+align-items: center;
 
 `;
 

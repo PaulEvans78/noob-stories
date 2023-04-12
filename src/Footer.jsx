@@ -4,7 +4,29 @@ import linkedIcon from './assets/linkedIn_icon_white.png';
 import instaIcon from './assets/instagram_icon_white.png';
 import githubIcon from './assets/github_white.png';
 
+// import {
+//   Link
+// } from "react-router-dom";
 
+const footerData = [
+  {
+      id: 1,
+      href: "https://www.linkedin.com/in/paul-evans-3a74605/",
+      src: linkedIcon
+  },
+  {
+      id: 2,
+      href: "https://www.instagram.com/paulevanscreative/",
+      src: instaIcon
+      // icon: "./assets/instagram_icon_white.png"
+  },
+  {
+      id: 3,
+      href: "https://github.com/PaulEvans78",
+      src: githubIcon
+      // icon: "./assets/github_white.png"
+  },
+];
 
 const StyledFooter = styled.footer`
   grid-area: footer;
@@ -73,9 +95,14 @@ const Icons = () => {
   
   return (
     <IconContainer> 
-    <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  className = "linkedIcon" src={linkedIcon} alt="LinkedIn"/> </a>
+
+{footerData.map(Link => (
+<a href={Link.href}>
+<StyledIcon src={Link.src} key={Link.id}></StyledIcon>
+</a>))}
+    {/* <a href="https://www.linkedin.com/in/paul-evans-3a74605/"><StyledIcon  className = "linkedIcon" src={linkedIcon} alt="LinkedIn"/> </a>
     <a href="https://www.instagram.com/paulevanscreative/"><StyledIcon  className = "instaIcon" src={instaIcon} alt="Instagram"/> </a>
-    <a href="https://github.com/PaulEvans78"><StyledIcon  className = "gitIcon" src={githubIcon} alt="GitHub"/> </a>
+    <a href="https://github.com/PaulEvans78"><StyledIcon  className = "gitIcon" src={githubIcon} alt="GitHub"/> </a> */}
     </IconContainer>
   );
 }
