@@ -23,6 +23,22 @@ const Skills = () => {
             description: "You will Scream, You will cry, and if your lucky you will die",
             buttonText: "View More",
             buttonLink: "/"
+        },
+        {
+            upperPic: upperPic,
+            middlePic: middlePic,
+            headline: "React Portfolio",
+            description: "This React portfolio project is great for showcasing your skills, projects, and experience as a React developer.",
+            buttonText: "View More",
+            buttonLink: "/"
+        },
+        {
+            upperPic: itPic,
+            middlePic: clownPic,
+            headline: "Oh So Scary",
+            description: "You will Scream, You will cry, and if your lucky you will die",
+            buttonText: "View More",
+            buttonLink: "/"
         }
         
     ];
